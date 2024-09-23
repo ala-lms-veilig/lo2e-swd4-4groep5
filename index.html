@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mboRijnland Veiligheid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #2E0E4A;
+            color: white;
+            padding: 1rem 0;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        .logo span:nth-child(2) {
+            color: #EC4A67;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        nav a:hover {
+            color: #EC4A67;
+        }
+        main {
+            padding: 2rem 0;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            color: #2E0E4A;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .button-primary {
+            background-color: #EC4A67;
+            color: white;
+        }
+        .button-primary:hover {
+            background-color: #2E0E4A;
+        }
+        .button-secondary {
+            border: 2px solid #2E0E4A;
+            color: #2E0E4A;
+        }
+        .button-secondary:hover {
+            background-color: #2E0E4A;
+            color: white;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .feature {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .feature h2 {
+            color: #2E0E4A;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        .feature p {
+            color: #666;
+        }
+        .newsletter {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        .newsletter h2 {
+            color: #2E0E4A;
+            margin-bottom: 1rem;
+        }
+        .newsletter form {
+            display: flex;
+            gap: 1rem;
+        }
+        .newsletter input[type="email"] {
+            flex-grow: 1;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        footer {
+            background-color: #2E0E4A;
+            color: white;
+            padding: 2rem 0;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer-section a:hover {
+            color: #EC4A67;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <span>mborijn</span><span>//</span><span>land</span>
+                <span style="font-size: 0.8rem; margin-left: 0.5rem;">Veiligheid</span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="overons.html">Over ons</a>
+                <a href="incident.html ">Melden</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Welkom bij mboRijnland Veiligheid</h1>
+            <p>Samen zorgen we voor een veilige en open leeromgeving</p>
+            <div>
+                <a href="incident.html" class="button button-primary">Incident melden</a>
+                <a href="#" class="button button-secondary">Meer informatie</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2E0E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="M9 12l2 2 4-4"></path>
+                </svg>
+                <h2>Veiligheidsbeleid</h2>
+                <p>Lees over onze aanpak voor een veilige school</p>
+            </div>
+            <div class="feature">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2E0E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+                <h2>Meldpunt</h2>
+                <p>Meld incidenten of onveilige situaties</p>
+            </div>
+            <div class="feature">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2E0E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <h2>Veiligheidsteam</h2>
+                <p>Maak kennis met ons veiligheidsteam</p>
+            </div>
+            <div class="feature">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2E0E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <h2>Noodcontacten</h2>
+                <p>Belangrijke contacten voor noodgevallen</p>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <h2>Blijf op de hoogte</h2>
+            <p>Ontvang updates over veiligheid op mboRijnland Lammenschans</p>
+            <form>
+                <input type="email" placeholder="Jouw e-mailadres" required>
+                <button type="submit" class="button button-primary">Aanmelden</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>mboRijnland, locatie Lammenschans</p>
+                <p>Bètaplein 18</p>
+                <p>2321 KS Leiden</p>
+            </div>
+            <div class="footer-section">
+                <h3>Snelle links</h3>
+                <ul>
+                    <li><a href="#">Privacybeleid</a></li>
+                    <li><a href="#">Gedragsregels</a></li>
+                    <li><a href="#">Veelgestelde vragen</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Volg ons</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> mboRijnland Veiligheid. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+</body>
+</html>

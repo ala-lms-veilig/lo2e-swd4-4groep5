@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Melden - mboRijnland Veiligheid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #2E0E4A;
+            color: white;
+            padding: 1rem 0;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        .logo span:nth-child(2) {
+            color: #EC4A67;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        nav a:hover {
+            color: #EC4A67;
+        }
+        main {
+            padding: 2rem 0;
+        }
+        h1 {
+            color: #2E0E4A;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        form {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2E0E4A;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .button-primary {
+            background-color: #EC4A67;
+            color: white;
+        }
+        .button-primary:hover {
+            background-color: #2E0E4A;
+        }
+        footer {
+            background-color: #2E0E4A;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        #notification {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <span>mborijn</span><span>//</span><span>land</span>
+                <span style="font-size: 0.8rem; margin-left: 0.5rem;">Veiligheid</span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="overons.html">Over ons</a>
+                <a href="incident.html">Melden</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Incident Melden</h1>
+        <form id="incidentForm">
+            <label for="name">Naam:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="incident-type">Type incident:</label>
+            <select id="incident-type" name="incident-type" required>
+                <option value="">Selecteer een type</option>
+                <option value="pesten">Pesten</option>
+                <option value="discriminatie">Discriminatie</option>
+                <option value="geweld">Geweld</option>
+                <option value="diefstal">Diefstal</option>
+                <option value="vandalisme">Vandalisme</option>
+                <option value="anders">Anders</option>
+            </select>
+
+            <label for="location">Locatie:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="date">Datum van incident:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="description">Beschrijving van het incident:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <button type="submit" class="button button-primary">Incident Melden</button>
+        </form>
+        <div id="notification"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> mboRijnland Veiligheid. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('incidentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const jsonData = JSON.stringify(Object.fromEntries(formData));
+            
+            console.log('Saved JSON data:', jsonData);
+            
+            setTimeout(function() {
+                var notification = document.getElementById('notification');
+                notification.style.display = 'block';
+                notification.innerHTML = 'Uw melding is succesvol opgeslagen en verzonden naar de beveiligers. Zij zullen zo snel mogelijk actie ondernemen.';
+                
+                document.getElementById('incidentForm').reset();
+                
+                setTimeout(function() {
+                    notification.style.display = 'none';
+                }, 5000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
