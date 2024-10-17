@@ -1,53 +1,42 @@
 // Save and load incidents from localStorage
-const STORAGE_KEY = 'incidents';
-const saveIncidents = incidents => localStorage.setItem(STORAGE_KEY, JSON.stringify(incidents));
-const loadIncidents = () => JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+const STORAGE_KEY = 'incidenten';
 
-// Generate a unique ID for each incident
-const generateId = () => Date.now().toString(36) + Math.random().toString(36).substr(2);
+const loadIncidenten = () => JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+const saveIncidenten = incidenten => localStorage.setItem(STORAGE_KEY, JSON.stringify(incidenten));
 
 // Add a new incident
 function addIncident(formData) {
-    const incidents = loadIncidents();
-    const newIncident = {
-        id: generateId(),
-        timestamp: new Date().toISOString(),
+    const incidenten = loadIncidenten();
+    incidenten.push({
+        tijd: new Date().toLocaleString('nl-NL'),
         ...formData
-    };
-    incidents.push(newIncident);
-    saveIncidents(incidents);
+    });
+    saveIncidenten(incidenten);
+    updateDashboard();
 }
 
-// Display incidents on the dashboard
+
 function updateDashboard() {
-    const incidents = loadIncidents();
-    const dashboardContent = document.getElementById('dashboardContent');
+    const content = document.getElementById('dashboardContent');
+    if (!content) return;
     
-    if (dashboardContent) {
-        if (incidents.length > 0) {
-            const html = incidents.map(incident => `
-                <div class="incident-card">
-                    <h3>Incident ${incident.id}</h3>
-                    <p><strong>Timestamp:</strong> ${new Date(incident.timestamp).toLocaleString()}</p>
-                    ${Object.entries(incident)
-                        .filter(([key]) => !['id', 'timestamp'].includes(key))
-                        .map(([key, value]) => `<p><strong>${key}:</strong> ${value}</p>`)
-                        .join('')}
+    const incidenten = loadIncidenten();
+    content.innerHTML = incidenten.length ? incidenten.map(incident => `
+        <div class="incident-card">
+            ${Object.entries(incident).map(([key, value]) => `
+                <div class="incident-detail">
+                    <strong>${key}:</strong>
+                    <span>${value}</span>
                 </div>
-            `).join('');
-            dashboardContent.innerHTML = html;
-        } else {
-            dashboardContent.innerHTML = '<p>No incidents reported yet.</p>';
-        }
-    }
+            `).join('')}
+        </div>
+    `).join('') : '<p>Geen incidenten gerapporteerd.</p>';
 }
 
 // Handle form submission (on incident page)
 function handleSubmit(event) {
     event.preventDefault();
-    const formData = Object.fromEntries(new FormData(event.target));
-    addIncident(formData);
-    alert('Incident reported successfully!');
+    addIncident(Object.fromEntries(new FormData(event.target)));
     event.target.reset(); // Clear the form
 }
 
@@ -58,16 +47,13 @@ function clearIncidents() {
 }
 
 // Initialize page
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('incidentForm');
-    if (form) {
-        form.addEventListener('submit', handleSubmit);
-    }
+    if (form) form.addEventListener('submit', handleSubmit);
 
-    const clearButton = document.getElementById('clearIncidents');
-    if (clearButton) {
-        clearButton.addEventListener('click', clearIncidents);
-    }
+    const clearButton = document.getElementById('clearIncidenten');
+    if (clearButton) clearButton.addEventListener('click', clearIncidents);
 
     updateDashboard();
 });
