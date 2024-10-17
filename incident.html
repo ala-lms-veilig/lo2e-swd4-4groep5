@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incident Melden - mboRijnland Veiligheid</title>
+    <script src="script.js"></script>
     <link href="stylesheet.css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,7 +18,8 @@
                 <a href="index.html">Home</a>
                 <a href="overons.html">Over ons</a>
                 <a href="incident.html">Melden</a>
-                <a href="#">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
+            
             </nav>
         </div>
     </header>
@@ -27,9 +29,6 @@
         <form id="incidentForm">
             <label for="name">Naam:</label>
             <input type="text" id="name" name="name" required>
-
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
 
             <label for="incident-type">Type incident:</label>
             <select id="incident-type" name="incident-type" required>
@@ -43,23 +42,19 @@
             </select>
 
             <label for="location">Locatie:</label>
-            <input type="text" id="location" name="location" required>
-
-            <label for="date">Datum van incident:</label>
-            <input type="date" id="date" name="date" required>
+            <input type="text" id="location" name="Locatie" required>
 
             <label for="description">Beschrijving van het incident:</label>
             <textarea id="description" name="description" required></textarea>
 
-            <button type="submit" class="button button-primary">Incident Melden</button>
+            <button type="submit" class="button button-primary">Meld incident</button>
         </form>
         <div id="notification"></div>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> mboRijnland Veiligheid. Alle rechten voorbehouden.</p>
-        </div>
+        <div id="footerContent"></div>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
     </footer>
 
     <script>

@@ -4,6 +4,7 @@ body, html {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: #333;
+    height: 100%;
 }
 
 .container {
@@ -47,6 +48,7 @@ nav a:hover {
 
 main {
     padding: 2rem 0;
+    flex: 1 0 auto;
 }
 
 h1 {
@@ -158,6 +160,7 @@ footer {
     background-color: #2E0E4A;
     color: white;
     padding: 2rem 0;
+    flex-shrink: 0;
 }
 
 .footer-content {
@@ -251,4 +254,83 @@ textarea {
     padding: 10px;
     margin-top: 20px;
     border-radius: 4px;
+}
+
+#formDataDisplay {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#formDataDisplay h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.data-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.data-value {
+    color: #333;
+}
+
+#dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dashboardContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.incident-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.incident-card h3 {
+    color: #2E0E4A;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    border-bottom: 2px solid #2E0E4A;
+    padding-bottom: 10px;
+}
+
+.incident-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+
+.incident-detail {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 200px;
+    display: flex;
+}
+
+.incident-detail strong {
+    color: #555;
+    font-weight: 600;
+    margin-right: 5px;
+    min-width: 100px;
 }
