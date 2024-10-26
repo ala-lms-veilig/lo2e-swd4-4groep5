@@ -2,30 +2,23 @@
     "posts": [
         {
             "id": 1,
-            "title": "Post 1"
+            "title": "Incident 1",
+            "type": "Gevecht"
         },
         {
             "id": 2,
-            "title": "Post 2"
+            "title": "incident 2",
+            "type": "Gevecht"
         },
         {
             "id": 3,
-            "title": "Post 3"
-        }
-    ],
-    "comments": [
-        {
-            "id": 1,
-            "body": "Pipi",
-            "postId": 1
+            "title": "Incident 3",
+            "type": "Gevecht"
         },
         {
-            "id": 2,
-            "body": "Commentaar check",
-            "postId": 1
+            "id": 4,
+            "title": "Incident 4",
+            "type": "Gevecht"
         }
-    ],
-    "profile": {
-        "name": "Testing"
-    }
+    ]
 }
