@@ -16,16 +16,16 @@
     "comments": [
         {
             "id": 1,
-            "body": "some comment",
+            "body": "Pipi",
             "postId": 1
         },
         {
             "id": 2,
-            "body": "some comment",
+            "body": "Commentaar check",
             "postId": 1
         }
     ],
     "profile": {
-        "name": "typicode"
+        "name": "Testing"
     }
 }
