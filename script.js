@@ -41,7 +41,7 @@ function handleSubmit(event) {
 }
 
 // Clear all incidents
-function clearIncidents() {
+function clearIncidenten() {
     localStorage.removeItem(STORAGE_KEY);
     updateDashboard();
 }
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) form.addEventListener('submit', handleSubmit);
 
     const clearButton = document.getElementById('clearIncidenten');
-    if (clearButton) clearButton.addEventListener('click', clearIncidents);
+    if (clearButton) clearButton.addEventListener('click', clearIncidenten);
 
     updateDashboard();
 });
