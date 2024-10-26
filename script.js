@@ -1,10 +1,9 @@
-// Save and load incidents from localStorage
+
 const STORAGE_KEY = 'incidenten';
 
 const loadIncidenten = () => JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 const saveIncidenten = incidenten => localStorage.setItem(STORAGE_KEY, JSON.stringify(incidenten));
 
-// Add a new incident
 function addIncident(formData) {
     const incidenten = loadIncidenten();
     incidenten.push({
@@ -33,11 +32,11 @@ function updateDashboard() {
     `).join('') : '<p>Geen incidenten gerapporteerd.</p>';
 }
 
-// Handle form submission (on incident page)
+
 function handleSubmit(event) {
     event.preventDefault();
     addIncident(Object.fromEntries(new FormData(event.target)));
-    event.target.reset(); // Clear the form
+    event.target.reset(); 
 }
 
 // Clear all incidents
@@ -46,7 +45,6 @@ function clearIncidenten() {
     updateDashboard();
 }
 
-// Initialize page
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('incidentForm');
