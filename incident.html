@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incident Melden - mboRijnland Veiligheid</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link href="stylesheet.css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -47,9 +47,13 @@
             <label for="description">Beschrijving van het incident:</label>
             <textarea id="description" name="beschrijving" required></textarea>
 
-            <button type="submit" class="button button-primary">Meld incident</button>
+            <button type="submit" class="button button-primary">Submit</button>
         </form>
         <div id="notification"></div>
+
+        <div id="dashboardContent">
+
+        </div>
     </main>
 
     <footer>
@@ -82,29 +86,5 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('incidentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const jsonData = JSON.stringify(Object.fromEntries(formData));
-            
-            console.log('Saved JSON data:', jsonData);
-            
-            setTimeout(function() {
-                var notification = document.getElementById('notification');
-                notification.style.display = 'block';
-                notification.innerHTML = 'Uw melding is succesvol opgeslagen en verzonden naar de beveiligers. Zij zullen zo snel mogelijk actie ondernemen.';
-                
-                document.getElementById('incidentForm').reset();
-                
-                setTimeout(function() {
-                    notification.style.display = 'none';
-                }, 5000);
-            }, 1000);
-        });
-
-        
-    </script>
 </body>
 </html>

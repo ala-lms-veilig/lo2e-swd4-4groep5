@@ -1,3 +1,4 @@
+/*
 const dashboard = document.getElementById('dashboardContent');
 
 async function getData() {
@@ -21,7 +22,30 @@ async function getData() {
     } catch (error) {
         console.log(error.message);
     }
+}*/
+
+function pakData(){
+
+const incidents = document.getElementById('incidentForm');
+
+if (incidents){
+    incidents.addEventListener('submit', event => {
+event.preventDefault();
+
+    const formData = new FormData(incidents);
+    const dataAll = Object.fromEntries(formData);
+    
+    fetch('https://my-json-server.typicode.com/ala-lms-veilig/lo2e-swd4-4groep5/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(dataAll)
+    }).then(res => res.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
+});
+}
 }
 
-getData();
-
+pakData();
