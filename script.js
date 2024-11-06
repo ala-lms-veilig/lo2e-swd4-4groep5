@@ -1,5 +1,5 @@
-/*
 const dashboard = document.getElementById('dashboardContent');
+
 
 async function getData() {
     try {
@@ -13,7 +13,7 @@ async function getData() {
 
         if (json.posts) {
             json.posts.forEach(post => {
-                dashboardContent += `<p><strong>ID:</strong> ${post.id} <br> <strong>Titel:</strong> ${post.title}</p>`;
+                dashboardContent += `<p><strong>ID:</strong> ${post.id} <br> <strong>Titel:</strong> ${post.title} <br> <strong>Type:</strong> ${post.type} </p>`;
             });
         }
 
@@ -22,7 +22,9 @@ async function getData() {
     } catch (error) {
         console.log(error.message);
     }
-}*/
+}
+
+getData();
 
 function pakData(){
 
