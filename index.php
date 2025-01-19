@@ -1,3 +1,8 @@
+<?php
+session_start();
+    include 'connection.php';
+    include 'check_login.php';
+    ?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -15,11 +20,18 @@
                 <span style="font-size: 0.8rem; margin-left: 0.5rem;">Veiligheid</span>
             </a>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="overons.html">Over ons</a>
-                <a href="incident.html ">Melden</a>
-                <a href="dashboard.html">Dashboard</a>
-            </nav>
+                <a href="index.php">Home</a>
+                <a href="overons.php">Over ons</a>
+                <?php 
+                if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                    echo '<a href="incident.php">Melden</a>';
+                    echo '<a href="dashboard.php">Dashboard</a>';
+                    echo '<a href="login.php?logout=true">Uitloggen</a>';
+                } else {
+                    echo '<a href="login.php">Login</a>';
+                }
+                ?>
+</nav>
         </div>
     </header>
 
@@ -79,7 +91,7 @@
         </section>
     </main>
 
-    <footer>
+     <footer>
         <div class="container footer-content">
             <div class="footer-section">
                 <h3>Contact</h3>
